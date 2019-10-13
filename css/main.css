@@ -1,0 +1,83 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  margin-bottom: 40px;
+  background-color: light-blue ;
+}
+
+	
+h3{
+	 font-size: 150px;
+}
+table, th, td {
+  border: 2px solid black;
+  width: 40%;
+}
+.z{
+  float: right;
+
+
+
+}
+
+footer {
+            background-color: white;
+  bottom: -10px;
+  width: auto;
+  height: auto;
+    border: 1px solid #000000;
+  display: flex;
+  align-content:flex-end;
+
+            
+          
+        }
+ #demo{
+
+ 		 font-size: 50px;
+
+
+ }
+ #tim{
+ 	 		 font-size: 40px;
+
+ }
+.casa {
+    
+	float: right;
+}
+.grande{
+	height: 50%;
+	width: 50%
+	}
+ section {
+            overflow: auto;
+            /* Definimos el padding inferior:
+               50px del pie de pagina mas 10px de separacion
+            */
+            padding-bottom: 60px;
+            /* Definimos un padding superior */
+            padding-top:30px;
+
+
+
+        }
+}
+}
+.define{
+	width: 960px;
+	margin : 0 auto ;
+}
+
+ .btn-primary{
+ 	background-color: blue;
+ }
+a{
+	color : black ;
+}
+.a{
+	color : black;
+}
