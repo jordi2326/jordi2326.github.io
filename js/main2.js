@@ -294,7 +294,7 @@ function stats(){
 	$("#Rebotes").text(vectorPlayers[0].rebots);
 	$("#Robos").text(vectorPlayers[0].robos);
 	$("#Perdues").text(vectorPlayers[0].perdues);
-	var val = vectorPlayers[0].tapones+vectorPlayers[0].robos + vectorPlayers[0].punts + vectorPlayers[0].rebots+ vectorPlayers[0].tirs3+vectorPlayers[0].tirs2+vectorPlayers[0].tirs1+vectorPlayers[0].assistencia;
+	var val = vectorPlayers[0].tapones+vectorPlayers[0].robos + vectorPlayers[0].punts + vectorPlayers[0].rebots+vectorPlayers[0].assistencia;
 	var val2 = vectorPlayers[0].tirs2f+vectorPlayers[0].tirs3f +vectorPlayers[0].tirs1f + vectorPlayers[0].perdues+vectorPlayers[0].faltas;
 	vectorPlayers[0].valoracio=val-val2;
 	$("#Valoracio").text(vectorPlayers[0].valoracio);
@@ -318,7 +318,7 @@ function statsi1(){
 	$("#Rebotesi1").text(vectorPlayers[1].rebots);
 	$("#Robosi1").text(vectorPlayers[1].robos);
 	$("#Perduesi1").text(vectorPlayers[1].perdues);
-	var val = vectorPlayers[1].tapones+vectorPlayers[1].robos + vectorPlayers[1].punts + vectorPlayers[1].rebots+ vectorPlayers[1].tirs3+vectorPlayers[1].tirs2+vectorPlayers[1].tirs1+vectorPlayers[1].assistencia;
+	var val = vectorPlayers[1].tapones+vectorPlayers[1].robos + vectorPlayers[1].punts + vectorPlayers[1].rebots+vectorPlayers[1].assistencia;
 	var val2 = vectorPlayers[1].tirs2f+vectorPlayers[1].tirs3f +vectorPlayers[1].tirs1f + vectorPlayers[1].perdues+vectorPlayers[1].faltas;
 	vectorPlayers[1].valoracio=val-val2;
 	$("#Valoracioi1").text(vectorPlayers[1].valoracio);
@@ -343,7 +343,7 @@ function statsi2(){
 	$("#Rebotesi2").text(vectorPlayers[2].rebots);
 	$("#Robosi2").text(vectorPlayers[2].robos);
 	$("#Perduesi2").text(vectorPlayers[2].perdues);
-			var val = vectorPlayers[2].robos + vectorPlayers[2].punts + vectorPlayers[2].rebots+ vectorPlayers[2].tirs3+vectorPlayers[2].tirs2+vectorPlayers[2].tirs1+vectorPlayers[2].assistencia;
+	var val = vectorPlayers[2].tapones+vectorPlayers[2].robos + vectorPlayers[2].punts + vectorPlayers[2].rebots+vectorPlayers[2].assistencia;
 	var val2 = vectorPlayers[2].tirs2f+vectorPlayers[2].tirs3f +vectorPlayers[2].tirs1f + vectorPlayers[2].perdues+vectorPlayers[2].faltas;
 	vectorPlayers[2].valoracio=val-val2;
 	$("#Valoracioi2").text(vectorPlayers[2].valoracio);
@@ -367,7 +367,7 @@ function statsi3(){
 	$("#Rebotesi3").text(vectorPlayers[3].rebots);
 	$("#Robosi3").text(vectorPlayers[3].robos);
 	$("#Perduesi3").text(vectorPlayers[3].perdues);
-	var val = vectorPlayers[3].robos + vectorPlayers[3].punts + vectorPlayers[3].rebots+ vectorPlayers[3].tirs3+vectorPlayers[3].tirs2+vectorPlayers[3].tirs1+vectorPlayers[3].assistencia;
+	var val = vectorPlayers[3].tapones+vectorPlayers[3].robos + vectorPlayers[3].punts + vectorPlayers[3].rebots+ vectorPlayers[3].assistencia;
 	var val2 = vectorPlayers[3].tirs2f+vectorPlayers[3].tirs3f +vectorPlayers[3].tirs1f + vectorPlayers[3].perdues+vectorPlayers[3].faltas;
 	vectorPlayers[3].valoracio=val-val2;
 	$("#Valoracioi3").text(vectorPlayers[3].valoracio);
@@ -391,7 +391,7 @@ function statsi4(){
 	$("#Rebotesi4").text(vectorPlayers[4].rebots);
 	$("#Robosi4").text(vectorPlayers[4].robos);
 	$("#Perduesi4").text(vectorPlayers[4].perdues);
-	var val = vectorPlayers[4].robos + vectorPlayers[4].punts + vectorPlayers[4].rebots+ vectorPlayers[4].tirs3+vectorPlayers[4].tirs2+vectorPlayers[4].tirs1+vectorPlayers[4].assistencia;
+	var val = vectorPlayers[4].tapones+vectorPlayers[4].robos + vectorPlayers[4].punts + vectorPlayers[4].rebots+vectorPlayers[4].assistencia;
 	var val2 = vectorPlayers[4].tirs2f+vectorPlayers[4].tirs3f +vectorPlayers[4].tirs1f + vectorPlayers[4].perdues+vectorPlayers[4].faltas;
 	vectorPlayers[4].valoracio=val-val2;
 	$("#Valoracioi4").text(vectorPlayers[4].valoracio);
@@ -415,7 +415,7 @@ function statsi5(){
 	$("#Rebotesi5").text(vectorPlayers[5].rebots);
 	$("#Robosi5").text(vectorPlayers[5].robos);
 	$("#Perduesi5").text(vectorPlayers[5].perdues);
-	var val = vectorPlayers[5].robos + vectorPlayers[5].punts + vectorPlayers[5].rebots+ vectorPlayers[5].tirs3+vectorPlayers[5].tirs2+vectorPlayers[5].tirs1+vectorPlayers[5].assistencia;
+	var val = vectorPlayers[5].tapones+vectorPlayers[5].robos + vectorPlayers[5].punts + vectorPlayers[5].rebots+ vectorPlayers[5].assistencia;
 	var val2 = vectorPlayers[5].tirs2f+vectorPlayers[5].tirs3f +vectorPlayers[5].tirs1f + vectorPlayers[5].perdues+vectorPlayers[5].faltas;
 	vectorPlayers[5].valoracio=val-val2;
 	$("#Valoracioi5").text(vectorPlayers[5].valoracio);
@@ -439,7 +439,7 @@ function statsi6(){
 	$("#Rebotesi6").text(vectorPlayers[6].rebots);
 	$("#Robosi6").text(vectorPlayers[6].robos);
 	$("#Perduesi6").text(vectorPlayers[6].perdues);
-	var val = vectorPlayers[6].robos + vectorPlayers[6].punts + vectorPlayers[6].rebots+ vectorPlayers[6].tirs3+vectorPlayers[6].tirs2+vectorPlayers[6].tirs1+vectorPlayers[6].assistencia;
+	var val = vectorPlayers[6].tapones+vectorPlayers[6].robos + vectorPlayers[6].punts + vectorPlayers[6].rebots+vectorPlayers[6].assistencia;
 	var val2 = vectorPlayers[6].tirs2f+vectorPlayers[6].tirs3f +vectorPlayers[6].tirs1f + vectorPlayers[6].perdues+vectorPlayers[6].faltas;
 	vectorPlayers[6].valoracio=val-val2;
 	$("#Valoracioi6").text(vectorPlayers[6].valoracio);
@@ -463,7 +463,7 @@ function statsi7(){
 	$("#Rebotesi7").text(vectorPlayers[7].rebots);
 	$("#Robosi7").text(vectorPlayers[7].robos);
 	$("#Perduesi7").text(vectorPlayers[7].perdues);
-	var val = vectorPlayers[7].robos + vectorPlayers[7].punts + vectorPlayers[7].rebots+ vectorPlayers[7].tirs3+vectorPlayers[7].tirs2+vectorPlayers[7].tirs1+vectorPlayers[7].assistencia;
+	var val = vectorPlayers[7].tapones+vectorPlayers[7].robos + vectorPlayers[7].punts + vectorPlayers[7].rebots+ vectorPlayers[7].assistencia;
 	var val2 = vectorPlayers[7].tirs2f+vectorPlayers[7].tirs3f +vectorPlayers[7].tirs1f + vectorPlayers[7].perdues+vectorPlayers[7].faltas;
 	vectorPlayers[7].valoracio=val-val2;
 	$("#Valoracioi7").text(vectorPlayers[7].valoracio);
@@ -487,7 +487,7 @@ function statsi8(){
 	$("#Rebotesi8").text(vectorPlayers[8].rebots);
 	$("#Robosi8").text(vectorPlayers[8].robos);
 	$("#Perduesi8").text(vectorPlayers[8].perdues);
-	var val = vectorPlayers[8].robos + vectorPlayers[8].punts + vectorPlayers[8].rebots+ vectorPlayers[8].tirs3+vectorPlayers[8].tirs2+vectorPlayers[8].tirs1+vectorPlayers[8].assistencia;
+	var val = vectorPlayers[8].tapones+vectorPlayers[8].robos + vectorPlayers[8].punts + vectorPlayers[8].rebots+vectorPlayers[8].assistencia;
 	var val2 = vectorPlayers[8].tirs2f+vectorPlayers[8].tirs3f +vectorPlayers[8].tirs1f + vectorPlayers[8].perdues+vectorPlayers[8].faltas;
 	vectorPlayers[8].valoracio=val-val2;
 	$("#Valoracioi8").text(vectorPlayers[8].valoracio);
@@ -518,7 +518,7 @@ function statsi9(){
 	$("#Tirs3i9").text( vectorPlayers[9].tirs3+ "/" + tir3 );
 	$("#Tirs1i9").text( vectorPlayers[9].tirs1+ "/" + tir1 );
 	$("#assis9").text( vectorPlayers[9].assistencia);
-	var val = vectorPlayers[9].robos + vectorPlayers[9].punts + vectorPlayers[9].rebots+ vectorPlayers[9].tirs3+vectorPlayers[9].tirs2+vectorPlayers[9].tirs1+vectorPlayers[10].assistencia;
+	var val = vectorPlayers[9].tapones+vectorPlayers[9].robos + vectorPlayers[9].punts + vectorPlayers[9].rebots+ vectorPlayers[10].assistencia;
 	var val2 = vectorPlayers[9].tirs2f+vectorPlayers[9].tirs3f +vectorPlayers[9].tirs1f + vectorPlayers[9].perdues+vectorPlayers[9].faltas;
 	vectorPlayers[9].valoracio=val-val2;
 	$("#Valoracioi9").text(vectorPlayers[9].valoracio);
@@ -541,7 +541,7 @@ function statsi10(){
 	$("#Tirs3i10").text( vectorPlayers[10].tirs3+ "/" + tir3 );
 	$("#Tirs1i10").text( vectorPlayers[10].tirs1+ "/" + tir1 );
 	$("#assis10").text( vectorPlayers[10].assistencia);
-	var val = vectorPlayers[10].robos + vectorPlayers[10].punts + vectorPlayers[10].rebots+ vectorPlayers[10].tirs3+vectorPlayers[10].tirs2+vectorPlayers[10].tirs1+vectorPlayers[10].assistencia;
+	var val = vectorPlayers[10].tapones+vectorPlayers[10].robos + vectorPlayers[10].punts + vectorPlayers[10].rebots+ vectorPlayers[10].assistencia;
 	var val2 = vectorPlayers[10].tirs2f+vectorPlayers[10].tirs3f +vectorPlayers[10].tirs1f + vectorPlayers[10].perdues+vectorPlayers[10].faltas;
 	vectorPlayers[10].valoracio=val-val2;
 	$("#Valoracioi10").text(vectorPlayers[10].valoracio);
@@ -554,7 +554,7 @@ function statsi11(){
 	$("#Rebotesi11").text(vectorPlayers[11].rebots);
 	$("#Robosi11").text(vectorPlayers[11].robos);
 	$("#Perduesi11").text(vectorPlayers[11].perdues);
-	var val = vectorPlayers[11].robos + vectorPlayers[11].punts + vectorPlayers[11].rebots+ vectorPlayers[11].tirs3+vectorPlayers[11].tirs2+vectorPlayers[11].tirs1+vectorPlayers[11].assistencia;
+	var val = vectorPlayers[11].robos + vectorPlayers[11].punts + vectorPlayers[11].rebots+vectorPlayers[11].assistencia+vectorPlayers[11].tapones;
 	var val2 = vectorPlayers[11].tirs2f+vectorPlayers[11].tirs3f +vectorPlayers[11].tirs1f + vectorPlayers[11].perdues+vectorPlayers[11].faltas;
 	vectorPlayers[11].valoracio=val-val2;
 	$("#Valoracioi11").text(vectorPlayers[11].valoracio);
