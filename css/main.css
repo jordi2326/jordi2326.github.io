@@ -1,11 +1,25 @@
+
+
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
 html {
   min-height: 100%;
   position: relative;
 }
 body {
-  margin: 0;
+  margin: 10px;
   margin-bottom: 40px;
-  background-color: light-blue ;
+ background-color: light-blue ;
+ margin-left: 10px;
+ margin-right: 10px;
 }
 div {
   resize: both;
@@ -17,7 +31,21 @@ h3{
 }
 table, th, td {
   border: 2px solid black;
-  width: 40%;
+  size: auto;
+  text-align: center;
+  word-wrap: break-word;
+  table-layout: fixed;
+
+
+}
+td{
+  font-size: 150%;
+}
+table {
+  width: 100%;
+
+
+
 }
 .z{
   float: right;
@@ -48,6 +76,12 @@ footer {
  	 		 font-size: 40px;
 
  }
+ #botones{
+  margin: 1rem;
+  padding: 1rem;
+  /* IMPORTANTE */
+  text-align: center;
+ }
 .casa {
     
 	float: right;
@@ -55,7 +89,19 @@ footer {
 .grande{
 	height: 50%;
 	width: 50%
-	}
+  }
+  .tabla1{
+  
+    height: 25%;
+    width: 25%;
+    table-layout: fixed;
+
+  }
+  .cen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
  section {
             overflow: auto;
             /* Definimos el padding inferior:
@@ -68,8 +114,8 @@ footer {
 
 
         }
-}
-}
+
+
 .define{
 	width: 960px;
 	margin : 0 auto ;

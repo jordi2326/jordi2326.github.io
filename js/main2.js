@@ -4,8 +4,24 @@ var vectorPlayers = [,,,,,,,,,,,,];
 var cont = 0 ;
 var jugador = -1;
 var menos = 0 ;
+var equipolocal=0;
+var a=0;
 window.onload= function(){
 jugador = -1;
+
+   
+
+   $("#a1").click(function(){ 
+   	 a = a +1 ; 
+   	  	$("#marcador22").text(a);
+    
+   });
+   $("#a1i").click(function(){ 
+   	 a = a - 1 ; 
+   	  	$("#marcador22").text(a);
+    
+   });
+  
 
 $("#menos").click(function(){
  	    menos = 1;
@@ -91,7 +107,9 @@ $("#falt").click(function(){
 	      else {
 	      			  vectorPlayers[jugador].faltas=vectorPlayers[jugador].faltas+1;
 
-	      }
+		  }
+		  jugador = -1;
+
 		  imprimir();
 		 
 	});
@@ -99,14 +117,20 @@ $("#falt").click(function(){
 				      if(menos == 1 ){
 				      	vectorPlayers[jugador].tirs2-=1;
 		  		vectorPlayers[jugador].punts-=2;
-		  			      			  menos = 0 ; 
+										  menos = 0 ; 
+										  equipolocal-=2;
+										  $("#marcador21").text(equipolocal);
+
                      }
 
 			else {
 				vectorPlayers[jugador].tirs2+=1;
-		  		vectorPlayers[jugador].punts+=2;
+				  vectorPlayers[jugador].punts+=2;
+				  equipolocal+=2;
+				  $("#marcador21").text(equipolocal);
 			}
-		  
+			jugador = -1;
+
 		  imprimir();
 
 		  
@@ -114,14 +138,19 @@ $("#falt").click(function(){
 		$("#3p").click(function(){
 			if (menos == 1 ){
 				vectorPlayers[jugador].tirs3-=1;
-		        vectorPlayers[jugador].punts-=3;
+				vectorPlayers[jugador].punts-=3;
+				equipolocal-=3;
+				$("#marcador21").text(equipolocal);
 				menos = 0 ;
 			}
 			else{
 				vectorPlayers[jugador].tirs3+=1;
-		  		vectorPlayers[jugador].punts+=3;
+				  vectorPlayers[jugador].punts+=3;
+				  equipolocal+=3;
+				  $("#marcador21").text(equipolocal);
 			}
-		    
+		    jugador = -1;
+
 		  
 		  imprimir();
 		  
@@ -129,15 +158,21 @@ $("#falt").click(function(){
 		$("#1p").click(function(){
 			if (menos == 1 ){
 				vectorPlayers[jugador].tirs1-=1;
-		  		vectorPlayers[jugador].punts-=1;
+				  vectorPlayers[jugador].punts-=1;
+				  equipolocal-=1;
+				  $("#marcador21").text(equipolocal);
 				menos = 0 ; 
 			}
 			else {
 				vectorPlayers[jugador].tirs1+=1;
-		  vectorPlayers[jugador].punts+=1;
+				  vectorPlayers[jugador].punts+=1;
+				  equipolocal+=1;
+				  $("#marcador21").text(equipolocal);
+
 			}
 		    
 		  		
+			jugador = -1;
 
 		  imprimir();
 		  
@@ -153,6 +188,8 @@ $("#falt").click(function(){
 
 			}
 		  		 
+			jugador = -1;
+ 
 
 		  imprimir();
 		  
@@ -168,6 +205,7 @@ $("#falt").click(function(){
 	
 			}
 		  		  
+			jugador = -1;
 
 		  imprimir();
 		  
@@ -182,6 +220,7 @@ $("#falt").click(function(){
 
 			}
 		
+			jugador = -1;
 
 		  imprimir();
 		 
@@ -196,6 +235,7 @@ $("#falt").click(function(){
 
 			}
 		  	
+			jugador = -1;
 
 		  imprimir();
 
@@ -210,7 +250,8 @@ $("#falt").click(function(){
 						  vectorPlayers[jugador].tirs3f+=1;
 
 			}
-		  		
+			jugador = -1;
+	
 
 		  imprimir();
 		
@@ -224,7 +265,8 @@ $("#falt").click(function(){
 			else {
 			   vectorPlayers[jugador].tirs1f+=1;	
 			}
-		  		 
+			jugador = -1;
+	 
 
 		  imprimir();
 
@@ -238,6 +280,7 @@ $("#falt").click(function(){
 		 			  vectorPlayers[jugador].assistencia+=1;
 
 		 } 
+		 jugador = -1;
 
 
 		  imprimir();
@@ -252,6 +295,7 @@ $("#falt").click(function(){
 		 			  vectorPlayers[jugador].tapones+=1;
 
 		 } 
+		 jugador = -1;
 
 
 		  imprimir();
@@ -302,9 +346,9 @@ function stats(){
 	var tir3 = vectorPlayers[0].tirs3 + vectorPlayers[0].tirs3f
 	var tir1 = vectorPlayers[0].tirs1 + vectorPlayers[0].tirs1f
 	
-	$("#Tirs2").text( vectorPlayers[0].tirs2+ "/" + tir2 );
-	$("#Tirs3").text( vectorPlayers[0].tirs3+ "/" + tir3 );
-	$("#Tirs1").text( vectorPlayers[0].tirs1+ "/" + tir1 );
+	$("#Tirs2").text( vectorPlayers[0].tirs2+ "/." + tir2 );
+	$("#Tirs3").text( vectorPlayers[0].tirs3+ "/." + tir3 );
+	$("#Tirs1").text( vectorPlayers[0].tirs1+ "/." + tir1 );
 	$("#assis").text( vectorPlayers[0].assistencia);
 
 
@@ -326,9 +370,9 @@ function statsi1(){
 	var tir3 = vectorPlayers[1].tirs3 + vectorPlayers[1].tirs3f
 	var tir1 = vectorPlayers[1].tirs1 + vectorPlayers[1].tirs1f
 	
-	$("#Tirs2i1").text( vectorPlayers[1].tirs2+ "/" + tir2 );
-	$("#Tirs3i1").text( vectorPlayers[1].tirs3+ "/" + tir3 );
-	$("#Tirs1i1").text( vectorPlayers[1].tirs1+ "/" + tir1 );
+	$("#Tirs2i1").text( vectorPlayers[1].tirs2+ "/." + tir2 );
+	$("#Tirs3i1").text( vectorPlayers[1].tirs3+ "/." + tir3 );
+	$("#Tirs1i1").text( vectorPlayers[1].tirs1+ "/." + tir1 );
 	$("#assis1").text( vectorPlayers[1].assistencia);
 
 
@@ -351,9 +395,9 @@ function statsi2(){
 	var tir3 = vectorPlayers[2].tirs3 + vectorPlayers[2].tirs3f
 	var tir1 = vectorPlayers[2].tirs1 + vectorPlayers[2].tirs1f
 	
-	$("#Tirs2i2").text( vectorPlayers[2].tirs2+ "/" + tir2 );
-	$("#Tirs3i2").text( vectorPlayers[2].tirs3+ "/" + tir3 );
-	$("#Tirs1i2").text( vectorPlayers[2].tirs1+ "/" + tir1 );
+	$("#Tirs2i2").text( vectorPlayers[2].tirs2+ "/." + tir2 );
+	$("#Tirs3i2").text( vectorPlayers[2].tirs3+ "/." + tir3 );
+	$("#Tirs1i2").text( vectorPlayers[2].tirs1+ "/." + tir1 );
 	$("#assis2").text( vectorPlayers[2].assistencia);
 
 
@@ -375,9 +419,9 @@ function statsi3(){
 	var tir3 = vectorPlayers[3].tirs3 + vectorPlayers[3].tirs3f
 	var tir1 = vectorPlayers[3].tirs1 + vectorPlayers[3].tirs1f
 	
-	$("#Tirs2i3").text( vectorPlayers[3].tirs2+ "/" + tir2 );
-	$("#Tirs3i3").text( vectorPlayers[3].tirs3+ "/" + tir3 );
-	$("#Tirs1i3").text( vectorPlayers[3].tirs1+ "/" + tir1 );
+	$("#Tirs2i3").text( vectorPlayers[3].tirs2+ "/." + tir2 );
+	$("#Tirs3i3").text( vectorPlayers[3].tirs3+ "/." + tir3 );
+	$("#Tirs1i3").text( vectorPlayers[3].tirs1+ "/." + tir1 );
 	$("#assis3").text( vectorPlayers[3].assistencia);
 
 
@@ -399,9 +443,9 @@ function statsi4(){
 	var tir3 = vectorPlayers[4].tirs3 + vectorPlayers[4].tirs3f
 	var tir1 = vectorPlayers[4].tirs1 + vectorPlayers[4].tirs1f
 	
-	$("#Tirs2i4").text( vectorPlayers[4].tirs2+ "/" + tir2 );
-	$("#Tirs3i4").text( vectorPlayers[4].tirs3+ "/" + tir3 );
-	$("#Tirs1i4").text( vectorPlayers[4].tirs1+ "/" + tir1 );
+	$("#Tirs2i4").text( vectorPlayers[4].tirs2+ "/." + tir2 );
+	$("#Tirs3i4").text( vectorPlayers[4].tirs3+ "/." + tir3 );
+	$("#Tirs1i4").text( vectorPlayers[4].tirs1+ "/." + tir1 );
 	$("#assis4").text( vectorPlayers[4].assistencia);
 
 
@@ -423,9 +467,9 @@ function statsi5(){
 	var tir3 = vectorPlayers[5].tirs3 + vectorPlayers[5].tirs3f
 	var tir1 = vectorPlayers[5].tirs1 + vectorPlayers[5].tirs1f
 	
-	$("#Tirs2i5").text( vectorPlayers[5].tirs2+ "/" + tir2 );
-	$("#Tirs3i5").text( vectorPlayers[5].tirs3+ "/" + tir3 );
-	$("#Tirs1i5").text( vectorPlayers[5].tirs1+ "/" + tir1 );
+	$("#Tirs2i5").text( vectorPlayers[5].tirs2+ "/." + tir2 );
+	$("#Tirs3i5").text( vectorPlayers[5].tirs3+ "/." + tir3 );
+	$("#Tirs1i5").text( vectorPlayers[5].tirs1+ "/." + tir1 );
 	$("#assis5").text( vectorPlayers[5].assistencia);
 
 
@@ -447,9 +491,9 @@ function statsi6(){
 	var tir3 = vectorPlayers[6].tirs3 + vectorPlayers[6].tirs3f
 	var tir1 = vectorPlayers[6].tirs1 + vectorPlayers[6].tirs1f
 	
-	$("#Tirs2i6").text( vectorPlayers[6].tirs2+ "/" + tir2 );
-	$("#Tirs3i6").text( vectorPlayers[6].tirs3+ "/" + tir3 );
-	$("#Tirs1i6").text( vectorPlayers[6].tirs1+ "/" + tir1 );
+	$("#Tirs2i6").text( vectorPlayers[6].tirs2+ "/." + tir2 );
+	$("#Tirs3i6").text( vectorPlayers[6].tirs3+ "/." + tir3 );
+	$("#Tirs1i6").text( vectorPlayers[6].tirs1+ "/." + tir1 );
 	$("#assi6").text(vectorPlayers[6].assistencia);
 
 
@@ -471,9 +515,9 @@ function statsi7(){
 	var tir3 = vectorPlayers[7].tirs3 + vectorPlayers[7].tirs3f
 	var tir1 = vectorPlayers[7].tirs1 + vectorPlayers[7].tirs1f
 	
-	$("#Tirs2i7").text( vectorPlayers[7].tirs2+ "/" + tir2 );
-	$("#Tirs3i7").text( vectorPlayers[7].tirs3+ "/" + tir3 );
-	$("#Tirs1i7").text( vectorPlayers[7].tirs1+ "/" + tir1 );
+	$("#Tirs2i7").text( vectorPlayers[7].tirs2+ "/." + tir2 );
+	$("#Tirs3i7").text( vectorPlayers[7].tirs3+ "/." + tir3 );
+	$("#Tirs1i7").text( vectorPlayers[7].tirs1+ "/." + tir1 );
 	$("#assis7").text( vectorPlayers[7].assistencia);
 
 
@@ -495,9 +539,9 @@ function statsi8(){
 	var tir3 = vectorPlayers[8].tirs3 + vectorPlayers[8].tirs3f
 	var tir1 = vectorPlayers[8].tirs1 + vectorPlayers[8].tirs1f
 	
-	$("#Tirs2i8").text( vectorPlayers[8].tirs2+ "/" + tir2 );
-	$("#Tirs3i8").text( vectorPlayers[8].tirs3+ "/" + tir3 );
-	$("#Tirs1i8").text( vectorPlayers[8].tirs1+ "/" + tir1 );
+	$("#Tirs2i8").text( vectorPlayers[8].tirs2+ "/." + tir2 );
+	$("#Tirs3i8").text( vectorPlayers[8].tirs3+ "/." + tir3 );
+	$("#Tirs1i8").text( vectorPlayers[8].tirs1+ "/." + tir1 );
 	$("#assis8").text( vectorPlayers[8].assistencia);
 
 
@@ -514,9 +558,9 @@ function statsi9(){
 	var tir2 = vectorPlayers[9].tirs2 + vectorPlayers[9].tirs2f;
 	var tir3 = vectorPlayers[9].tirs3 + vectorPlayers[9].tirs3f
 	var tir1 = vectorPlayers[9].tirs1 + vectorPlayers[9].tirs1f
-	$("#Tirs2i9").text( vectorPlayers[9].tirs2+ "/" + tir2 );
-	$("#Tirs3i9").text( vectorPlayers[9].tirs3+ "/" + tir3 );
-	$("#Tirs1i9").text( vectorPlayers[9].tirs1+ "/" + tir1 );
+	$("#Tirs2i9").text( vectorPlayers[9].tirs2+ "/." + tir2 );
+	$("#Tirs3i9").text( vectorPlayers[9].tirs3+ "/." + tir3 );
+	$("#Tirs1i9").text( vectorPlayers[9].tirs1+ "/." + tir1 );
 	$("#assis9").text( vectorPlayers[9].assistencia);
 	var val = vectorPlayers[9].tapones+vectorPlayers[9].robos + vectorPlayers[9].punts + vectorPlayers[9].rebots+ vectorPlayers[10].assistencia;
 	var val2 = vectorPlayers[9].tirs2f+vectorPlayers[9].tirs3f +vectorPlayers[9].tirs1f + vectorPlayers[9].perdues+vectorPlayers[9].faltas;
@@ -537,9 +581,9 @@ function statsi10(){
 	var tir2 = vectorPlayers[10].tirs2 + vectorPlayers[10].tirs2f;
 	var tir3 = vectorPlayers[10].tirs3 + vectorPlayers[10].tirs3f
 	var tir1 = vectorPlayers[10].tirs1 + vectorPlayers[10].tirs1f
-	$("#Tirs2i10").text( vectorPlayers[10].tirs2+ "/" + tir2 );
-	$("#Tirs3i10").text( vectorPlayers[10].tirs3+ "/" + tir3 );
-	$("#Tirs1i10").text( vectorPlayers[10].tirs1+ "/" + tir1 );
+	$("#Tirs2i10").text( vectorPlayers[10].tirs2+ "/." + tir2 );
+	$("#Tirs3i10").text( vectorPlayers[10].tirs3+ "/." + tir3 );
+	$("#Tirs1i10").text( vectorPlayers[10].tirs1+ "/." + tir1 );
 	$("#assis10").text( vectorPlayers[10].assistencia);
 	var val = vectorPlayers[10].tapones+vectorPlayers[10].robos + vectorPlayers[10].punts + vectorPlayers[10].rebots+ vectorPlayers[10].assistencia;
 	var val2 = vectorPlayers[10].tirs2f+vectorPlayers[10].tirs3f +vectorPlayers[10].tirs1f + vectorPlayers[10].perdues+vectorPlayers[10].faltas;
@@ -561,9 +605,9 @@ function statsi11(){
 	var tir2 = vectorPlayers[11].tirs2 + vectorPlayers[11].tirs2f;
 	var tir3 = vectorPlayers[11].tirs3 + vectorPlayers[11].tirs3f
 	var tir1 = vectorPlayers[11].tirs1 + vectorPlayers[11].tirs1f
-	$("#Tirs2i11").text( vectorPlayers[11].tirs2+ "/" + tir2 );
-	$("#Tirs3i11").text( vectorPlayers[11].tirs3+ "/" + tir3 );
-	$("#Tirs1i11").text( vectorPlayers[11].tirs1+ "/" + tir1 );
+	$("#Tirs2i11").text( vectorPlayers[11].tirs2+ "/." + tir2 );
+	$("#Tirs3i11").text( vectorPlayers[11].tirs3+ "/." + tir3 );
+	$("#Tirs1i11").text( vectorPlayers[11].tirs1+ "/." + tir1 );
 	$("#assis11").text( vectorPlayers[11].assistencia);
 
 
@@ -609,6 +653,36 @@ function guarda() {
 	 document.getElementById("i10").innerHTML=vectornumber[10];
 	 document.getElementById("i11").innerHTML=vectornumber[11];
 	 
+}
+function exportTableToExcel(tableID, filename = ''){
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(tableID);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    
+    // Specify file name
+    filename = filename?filename+'.xls':'excel_data.xls';
+    
+    // Create download link element
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
 }
 
 function toArray(obj) {
