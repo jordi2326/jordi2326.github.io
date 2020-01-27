@@ -98,14 +98,14 @@ $("#menos").click(function(){
 	  
        
          
-$("#falt").click(function(){
+$("#faltr").click(function(){
 	      if(menos == 1 ){
-	      			  vectorPlayers[jugador].faltas=vectorPlayers[jugador].faltas-1;
+	      			  vectorPlayers[jugador].faltasr=vectorPlayers[jugador].faltasr-1;
 	      			  menos = 0 ; 
 
 	      }
 	      else {
-	      			  vectorPlayers[jugador].faltas=vectorPlayers[jugador].faltas+1;
+	      			  vectorPlayers[jugador].faltasr=vectorPlayers[jugador].faltasr+1;
 
 		  }
 		  jugador = -1;
@@ -113,6 +113,24 @@ $("#falt").click(function(){
 		  imprimir();
 		 
 	});
+
+
+
+	$("#falt").click(function(){
+		if(menos == 1 ){
+					  vectorPlayers[jugador].faltas=vectorPlayers[jugador].faltas-1;
+					  menos = 0 ; 
+
+		}
+		else {
+					  vectorPlayers[jugador].faltas=vectorPlayers[jugador].faltas+1;
+
+		}
+		jugador = -1;
+
+		imprimir();
+	   
+  });
 		$("#2p").click(function(){
 				      if(menos == 1 ){
 				      	vectorPlayers[jugador].tirs2-=1;
@@ -212,11 +230,15 @@ $("#falt").click(function(){
 	});
 		$("#reb").click(function(){
 			if (menos == 1 ){
-			   vectorPlayers[jugador].rebots-=1;		  
+			   vectorPlayers[jugador].rebots-=1;	
+			   vectorPlayers[jugador].rebotsdef-=1;		 	  
 				menos = 0 ; 
 			}
 			else {
-			  vectorPlayers[jugador].rebots+=1;		  
+			  vectorPlayers[jugador].rebots+=1;		 
+			  vectorPlayers[jugador].rebotsdef+=1;		 
+
+
 
 			}
 		
@@ -225,6 +247,25 @@ $("#falt").click(function(){
 		  imprimir();
 		 
 	});
+	$("#reboff").click(function(){
+		if (menos == 1 ){
+		   vectorPlayers[jugador].rebots-=1;	
+		   vectorPlayers[jugador].rebotsoff-=1;		 	  
+			menos = 0 ; 
+		}
+		else {
+		  vectorPlayers[jugador].rebots+=1;		 
+		  vectorPlayers[jugador].rebotsoff+=1;		 
+
+
+
+		}
+	
+		jugador = -1;
+
+	  imprimir();
+	 
+});
 		$("#2pf").click(function(){
 			if(menos == 1 ){
 					  vectorPlayers[jugador].tirs2f-=1;
@@ -301,6 +342,22 @@ $("#falt").click(function(){
 		  imprimir();
 
 	});
+	$("#tapr").click(function(){
+		if (menos == 1 ){
+					  vectorPlayers[jugador].taponesr-=1;
+					 menos = 0 ;
+		}
+	 else{
+				   vectorPlayers[jugador].taponesr+=1;
+
+	 } 
+	 jugador = -1;
+
+
+	  imprimir();
+
+});
+
 
 
 
@@ -332,14 +389,17 @@ $("#falt").click(function(){
 
 function stats(){
 	$("#Faltas").text(vectorPlayers[0].faltas);
+	$("#Faltasr").text(vectorPlayers[0].faltasr);
 	$("#dorsal").text(vectorPlayers[0].num);
 	$("#Tapones").text(vectorPlayers[0].tapones);
+	$("#Taponesr").text(vectorPlayers[0].taponesr);
 	$("#Punts").text(vectorPlayers[0].punts);
 	$("#Rebotes").text(vectorPlayers[0].rebots);
+	$("#Rebotesdo").text(vectorPlayers[0].rebotsdef + "+" + vectorPlayers[0].rebotsoff);
 	$("#Robos").text(vectorPlayers[0].robos);
 	$("#Perdues").text(vectorPlayers[0].perdues);
-	var val = vectorPlayers[0].tapones+vectorPlayers[0].robos + vectorPlayers[0].punts + vectorPlayers[0].rebots+vectorPlayers[0].assistencia;
-	var val2 = vectorPlayers[0].tirs2f+vectorPlayers[0].tirs3f +vectorPlayers[0].tirs1f + vectorPlayers[0].perdues+vectorPlayers[0].faltas;
+	var val = vectorPlayers[0].tapones+vectorPlayers[0].robos + vectorPlayers[0].punts + vectorPlayers[0].rebots+vectorPlayers[0].assistencia+vectorPlayers[0].faltasr;
+	var val2 = vectorPlayers[0].tirs2f+vectorPlayers[0].tirs3f +vectorPlayers[0].tirs1f + vectorPlayers[0].perdues+vectorPlayers[0].faltas+vectorPlayers[0].taponesr;
 	vectorPlayers[0].valoracio=val-val2;
 	$("#Valoracio").text(vectorPlayers[0].valoracio);
 	var tir2 = vectorPlayers[0].tirs2 + vectorPlayers[0].tirs2f;
@@ -350,20 +410,28 @@ function stats(){
 	$("#Tirs3").text( vectorPlayers[0].tirs3+ "/." + tir3 );
 	$("#Tirs1").text( vectorPlayers[0].tirs1+ "/." + tir1 );
 	$("#assis").text( vectorPlayers[0].assistencia);
+	
+	if(vectorPlayers[0].faltas == 5 ){
+		document.getElementById('Faltas').style.color ='red';
+	}
+
 
 
 
 }
 function statsi1(){
 	$("#Taponesi1").text(vectorPlayers[1].tapones);
+	$("#Taponesri1").text(vectorPlayers[1].taponesr);
 	$("#Faltasi1").text(vectorPlayers[1].faltas);
+	$("#Faltasri1").text(vectorPlayers[1].faltasr);
+	$("#Rebotesdoi1").text(vectorPlayers[1].rebotsdef + "+" + vectorPlayers[1].rebotsoff);
 	$("#dorsali1").text(vectorPlayers[1].num);
 	$("#Puntsi1").text(vectorPlayers[1].punts);
 	$("#Rebotesi1").text(vectorPlayers[1].rebots);
 	$("#Robosi1").text(vectorPlayers[1].robos);
 	$("#Perduesi1").text(vectorPlayers[1].perdues);
-	var val = vectorPlayers[1].tapones+vectorPlayers[1].robos + vectorPlayers[1].punts + vectorPlayers[1].rebots+vectorPlayers[1].assistencia;
-	var val2 = vectorPlayers[1].tirs2f+vectorPlayers[1].tirs3f +vectorPlayers[1].tirs1f + vectorPlayers[1].perdues+vectorPlayers[1].faltas;
+	var val = vectorPlayers[1].tapones+vectorPlayers[1].robos + vectorPlayers[1].punts + vectorPlayers[1].rebots+vectorPlayers[1].assistencia+vectorPlayers[1].faltasr;
+	var val2 = vectorPlayers[1].tirs2f+vectorPlayers[1].tirs3f +vectorPlayers[1].tirs1f + vectorPlayers[1].perdues+vectorPlayers[1].faltas+vectorPlayers[1].taponesr;
 	vectorPlayers[1].valoracio=val-val2;
 	$("#Valoracioi1").text(vectorPlayers[1].valoracio);
 	var tir2 = vectorPlayers[1].tirs2 + vectorPlayers[1].tirs2f;
@@ -375,20 +443,26 @@ function statsi1(){
 	$("#Tirs1i1").text( vectorPlayers[1].tirs1+ "/." + tir1 );
 	$("#assis1").text( vectorPlayers[1].assistencia);
 
+	if(vectorPlayers[1].faltas == 5 ){
+		document.getElementById('Faltasi1').style.color ='red';
+	}
 
 
 }
 
 function statsi2(){
+	$("#Rebotesdoi2").text(vectorPlayers[2].rebotsdef + "+" + vectorPlayers[2].rebotsoff);
 	$("#Faltasi2").text(vectorPlayers[2].faltas);
+	$("#Faltasri2").text(vectorPlayers[2].faltasr);
 	$("#Taponesi2").text(vectorPlayers[2].tapones);
+	$("#Taponesri2").text(vectorPlayers[2].taponesr);
 	$("#dorsali2").text(vectorPlayers[2].num);
 	$("#Puntsi2").text(vectorPlayers[2].punts);
 	$("#Rebotesi2").text(vectorPlayers[2].rebots);
 	$("#Robosi2").text(vectorPlayers[2].robos);
 	$("#Perduesi2").text(vectorPlayers[2].perdues);
-	var val = vectorPlayers[2].tapones+vectorPlayers[2].robos + vectorPlayers[2].punts + vectorPlayers[2].rebots+vectorPlayers[2].assistencia;
-	var val2 = vectorPlayers[2].tirs2f+vectorPlayers[2].tirs3f +vectorPlayers[2].tirs1f + vectorPlayers[2].perdues+vectorPlayers[2].faltas;
+	var val = vectorPlayers[2].tapones+vectorPlayers[2].robos + vectorPlayers[2].punts + vectorPlayers[2].rebots+vectorPlayers[2].assistencia+vectorPlayers[2].faltasr;
+	var val2 = vectorPlayers[2].tirs2f+vectorPlayers[2].tirs3f +vectorPlayers[2].tirs1f + vectorPlayers[2].perdues+vectorPlayers[2].faltas+vectorPlayers[2].taponesr;
 	vectorPlayers[2].valoracio=val-val2;
 	$("#Valoracioi2").text(vectorPlayers[2].valoracio);
 	var tir2 = vectorPlayers[2].tirs2 + vectorPlayers[2].tirs2f;
@@ -400,19 +474,27 @@ function statsi2(){
 	$("#Tirs1i2").text( vectorPlayers[2].tirs1+ "/." + tir1 );
 	$("#assis2").text( vectorPlayers[2].assistencia);
 
+	if(vectorPlayers[2].faltas == 5 ){
+		document.getElementById('Faltasi2').style.color ='red';
+	}
+
+
 
 
 }
 function statsi3(){
+	$("#Rebotesdoi3").text(vectorPlayers[3].rebotsdef + "+" + vectorPlayers[3].rebotsoff);
 	$("#Faltasi3").text(vectorPlayers[3].faltas);
+	$("#Faltasri3").text(vectorPlayers[3].faltasr);
 	$("#Taponesi3").text(vectorPlayers[3].tapones);
+	$("#Taponesri3").text(vectorPlayers[3].taponesr);
 	$("#dorsali3").text(vectorPlayers[3].num);
 	$("#Puntsi3").text(vectorPlayers[3].punts);
 	$("#Rebotesi3").text(vectorPlayers[3].rebots);
 	$("#Robosi3").text(vectorPlayers[3].robos);
 	$("#Perduesi3").text(vectorPlayers[3].perdues);
-	var val = vectorPlayers[3].tapones+vectorPlayers[3].robos + vectorPlayers[3].punts + vectorPlayers[3].rebots+ vectorPlayers[3].assistencia;
-	var val2 = vectorPlayers[3].tirs2f+vectorPlayers[3].tirs3f +vectorPlayers[3].tirs1f + vectorPlayers[3].perdues+vectorPlayers[3].faltas;
+	var val = vectorPlayers[3].tapones+vectorPlayers[3].robos + vectorPlayers[3].punts + vectorPlayers[3].rebots+ vectorPlayers[3].assistencia+vectorPlayers[3].faltasr;
+	var val2 = vectorPlayers[3].tirs2f+vectorPlayers[3].tirs3f +vectorPlayers[3].tirs1f + vectorPlayers[3].perdues+vectorPlayers[3].faltas+vectorPlayers[3].taponesr;
 	vectorPlayers[3].valoracio=val-val2;
 	$("#Valoracioi3").text(vectorPlayers[3].valoracio);
 	var tir2 = vectorPlayers[3].tirs2 + vectorPlayers[3].tirs2f;
@@ -424,19 +506,24 @@ function statsi3(){
 	$("#Tirs1i3").text( vectorPlayers[3].tirs1+ "/." + tir1 );
 	$("#assis3").text( vectorPlayers[3].assistencia);
 
-
+	if(vectorPlayers[3].faltas == 5 ){
+		document.getElementById('Faltasi3').style.color ='red';
+	}
 
 }
 function statsi4(){
+	$("#Rebotesdoi4").text(vectorPlayers[4].rebotsdef + "+" + vectorPlayers[4].rebotsoff);
 	$("#Faltasi4").text(vectorPlayers[4].faltas);
+	$("#Faltasri4").text(vectorPlayers[4].faltasr);
 	$("#Taponesi4").text(vectorPlayers[4].tapones);
+	$("#Taponesri4").text(vectorPlayers[4].taponesr);
 	$("#dorsali4").text(vectorPlayers[4].num);
 	$("#Puntsi4").text(vectorPlayers[4].punts);
 	$("#Rebotesi4").text(vectorPlayers[4].rebots);
 	$("#Robosi4").text(vectorPlayers[4].robos);
 	$("#Perduesi4").text(vectorPlayers[4].perdues);
-	var val = vectorPlayers[4].tapones+vectorPlayers[4].robos + vectorPlayers[4].punts + vectorPlayers[4].rebots+vectorPlayers[4].assistencia;
-	var val2 = vectorPlayers[4].tirs2f+vectorPlayers[4].tirs3f +vectorPlayers[4].tirs1f + vectorPlayers[4].perdues+vectorPlayers[4].faltas;
+	var val = vectorPlayers[4].tapones+vectorPlayers[4].robos + vectorPlayers[4].punts + vectorPlayers[4].rebots+vectorPlayers[4].assistencia+vectorPlayers[4].faltasr;
+	var val2 = vectorPlayers[4].tirs2f+vectorPlayers[4].tirs3f +vectorPlayers[4].tirs1f + vectorPlayers[4].perdues+vectorPlayers[4].faltas+vectorPlayers[4].taponesr;
 	vectorPlayers[4].valoracio=val-val2;
 	$("#Valoracioi4").text(vectorPlayers[4].valoracio);
 	var tir2 = vectorPlayers[4].tirs2 + vectorPlayers[4].tirs2f;
@@ -447,20 +534,26 @@ function statsi4(){
 	$("#Tirs3i4").text( vectorPlayers[4].tirs3+ "/." + tir3 );
 	$("#Tirs1i4").text( vectorPlayers[4].tirs1+ "/." + tir1 );
 	$("#assis4").text( vectorPlayers[4].assistencia);
+	if(vectorPlayers[4].faltas == 5 ){
+		document.getElementById('Faltasi4').style.color ='red';
+	}
 
 
 
 }
 function statsi5(){
+	$("#Rebotesdoi5").text(vectorPlayers[5].rebotsdef + "+" + vectorPlayers[5].rebotsoff);
 	$("#Faltasi5").text(vectorPlayers[5].faltas);
+	$("#Faltasri5").text(vectorPlayers[5].faltasr);
 	$("#Taponesi5").text(vectorPlayers[5].tapones);
+	$("#Taponesri5").text(vectorPlayers[5].taponesr);
 	$("#dorsali5").text(vectorPlayers[5].num);
 	$("#Puntsi5").text(vectorPlayers[5].punts);
 	$("#Rebotesi5").text(vectorPlayers[5].rebots);
 	$("#Robosi5").text(vectorPlayers[5].robos);
 	$("#Perduesi5").text(vectorPlayers[5].perdues);
-	var val = vectorPlayers[5].tapones+vectorPlayers[5].robos + vectorPlayers[5].punts + vectorPlayers[5].rebots+ vectorPlayers[5].assistencia;
-	var val2 = vectorPlayers[5].tirs2f+vectorPlayers[5].tirs3f +vectorPlayers[5].tirs1f + vectorPlayers[5].perdues+vectorPlayers[5].faltas;
+	var val = vectorPlayers[5].tapones+vectorPlayers[5].robos + vectorPlayers[5].punts + vectorPlayers[5].rebots+ vectorPlayers[5].assistencia+vectorPlayers[5].faltasr;
+	var val2 = vectorPlayers[5].tirs2f+vectorPlayers[5].tirs3f +vectorPlayers[5].tirs1f + vectorPlayers[5].perdues+vectorPlayers[5].faltas+vectorPlayers[5].taponesr;
 	vectorPlayers[5].valoracio=val-val2;
 	$("#Valoracioi5").text(vectorPlayers[5].valoracio);
 	var tir2 = vectorPlayers[5].tirs2 + vectorPlayers[5].tirs2f;
@@ -473,18 +566,23 @@ function statsi5(){
 	$("#assis5").text( vectorPlayers[5].assistencia);
 
 
-
+	if(vectorPlayers[5].faltas == 5 ){
+		document.getElementById('Faltasi5').style.color ='red';
+	}
 }
 function statsi6(){
+	$("#Rebotesdoi6").text(vectorPlayers[6].rebotsdef + "+" + vectorPlayers[6].rebotsoff);
 	$("#Faltasi6").text(vectorPlayers[6].faltas);
+	$("#Faltasri6").text(vectorPlayers[6].faltasr);
 	$("#Taponesi6").text(vectorPlayers[6].tapones);
+	$("#Taponesri6").text(vectorPlayers[6].taponesr);
 	$("#dorsali6").text(vectorPlayers[6].num);
 	$("#Puntsi6").text(vectorPlayers[6].punts);
 	$("#Rebotesi6").text(vectorPlayers[6].rebots);
 	$("#Robosi6").text(vectorPlayers[6].robos);
 	$("#Perduesi6").text(vectorPlayers[6].perdues);
-	var val = vectorPlayers[6].tapones+vectorPlayers[6].robos + vectorPlayers[6].punts + vectorPlayers[6].rebots+vectorPlayers[6].assistencia;
-	var val2 = vectorPlayers[6].tirs2f+vectorPlayers[6].tirs3f +vectorPlayers[6].tirs1f + vectorPlayers[6].perdues+vectorPlayers[6].faltas;
+	var val = vectorPlayers[6].tapones+vectorPlayers[6].robos + vectorPlayers[6].punts + vectorPlayers[6].rebots+vectorPlayers[6].assistencia+vectorPlayers[6].faltasr;
+	var val2 = vectorPlayers[6].tirs2f+vectorPlayers[6].tirs3f +vectorPlayers[6].tirs1f + vectorPlayers[6].perdues+vectorPlayers[6].faltas+vectorPlayers[6].taponesr;
 	vectorPlayers[6].valoracio=val-val2;
 	$("#Valoracioi6").text(vectorPlayers[6].valoracio);
 	var tir2 = vectorPlayers[6].tirs2 + vectorPlayers[6].tirs2f;
@@ -494,21 +592,26 @@ function statsi6(){
 	$("#Tirs2i6").text( vectorPlayers[6].tirs2+ "/." + tir2 );
 	$("#Tirs3i6").text( vectorPlayers[6].tirs3+ "/." + tir3 );
 	$("#Tirs1i6").text( vectorPlayers[6].tirs1+ "/." + tir1 );
-	$("#assi6").text(vectorPlayers[6].assistencia);
+	$("#assis6").text(vectorPlayers[6].assistencia);
 
-
+	if(vectorPlayers[6].faltas == 5 ){
+		document.getElementById('Faltasi6').style.color ='red';
+	}
 
 }
 function statsi7(){
+	$("#Rebotesdoi7").text(vectorPlayers[7].rebotsdef + "+" + vectorPlayers[7].rebotsoff);
 	$("#Faltasi7").text(vectorPlayers[7].faltas);
 	$("#Taponesi7").text(vectorPlayers[7].tapones);
+	$("#Faltasri7").text(vectorPlayers[7].faltasr);
+	$("#Taponesri7").text(vectorPlayers[7].taponesr);
 	$("#dorsali7").text(vectorPlayers[7].num);
 	$("#Puntsi7").text(vectorPlayers[7].punts);
 	$("#Rebotesi7").text(vectorPlayers[7].rebots);
 	$("#Robosi7").text(vectorPlayers[7].robos);
 	$("#Perduesi7").text(vectorPlayers[7].perdues);
-	var val = vectorPlayers[7].tapones+vectorPlayers[7].robos + vectorPlayers[7].punts + vectorPlayers[7].rebots+ vectorPlayers[7].assistencia;
-	var val2 = vectorPlayers[7].tirs2f+vectorPlayers[7].tirs3f +vectorPlayers[7].tirs1f + vectorPlayers[7].perdues+vectorPlayers[7].faltas;
+	var val = vectorPlayers[7].tapones+vectorPlayers[7].robos + vectorPlayers[7].punts + vectorPlayers[7].rebots+ vectorPlayers[7].assistencia+vectorPlayers[7].faltasr;
+	var val2 = vectorPlayers[7].tirs2f+vectorPlayers[7].tirs3f +vectorPlayers[7].tirs1f + vectorPlayers[7].perdues+vectorPlayers[7].faltas+vectorPlayers[7].taponesr;
 	vectorPlayers[7].valoracio=val-val2;
 	$("#Valoracioi7").text(vectorPlayers[7].valoracio);
 	var tir2 = vectorPlayers[7].tirs2 + vectorPlayers[7].tirs2f;
@@ -519,20 +622,27 @@ function statsi7(){
 	$("#Tirs3i7").text( vectorPlayers[7].tirs3+ "/." + tir3 );
 	$("#Tirs1i7").text( vectorPlayers[7].tirs1+ "/." + tir1 );
 	$("#assis7").text( vectorPlayers[7].assistencia);
-
+	
+	
+	if(vectorPlayers[7].faltas == 5 ){
+		document.getElementById('Faltasi7').style.color ='red';
+	}
 
 
 }
 function statsi8(){
+	$("#Rebotesdoi8").text(vectorPlayers[8].rebotsdef + "+" + vectorPlayers[8].rebotsoff);
 	$("#Faltasi8").text(vectorPlayers[8].faltas);
 	$("#Taponesi8").text(vectorPlayers[8].tapones);
+	$("#Faltasri8").text(vectorPlayers[8].faltasr);
+	$("#Taponesri8").text(vectorPlayers[8].taponesr);
 	$("#dorsali8").text(vectorPlayers[8].num);
 	$("#Puntsi8").text(vectorPlayers[8].punts);
 	$("#Rebotesi8").text(vectorPlayers[8].rebots);
 	$("#Robosi8").text(vectorPlayers[8].robos);
 	$("#Perduesi8").text(vectorPlayers[8].perdues);
-	var val = vectorPlayers[8].tapones+vectorPlayers[8].robos + vectorPlayers[8].punts + vectorPlayers[8].rebots+vectorPlayers[8].assistencia;
-	var val2 = vectorPlayers[8].tirs2f+vectorPlayers[8].tirs3f +vectorPlayers[8].tirs1f + vectorPlayers[8].perdues+vectorPlayers[8].faltas;
+	var val = vectorPlayers[8].tapones+vectorPlayers[8].robos + vectorPlayers[8].punts + vectorPlayers[8].rebots+vectorPlayers[8].assistencia+vectorPlayers[8].faltasr;
+	var val2 = vectorPlayers[8].tirs2f+vectorPlayers[8].tirs3f +vectorPlayers[8].tirs1f + vectorPlayers[8].perdues+vectorPlayers[8].faltas+vectorPlayers[8].taponesr;
 	vectorPlayers[8].valoracio=val-val2;
 	$("#Valoracioi8").text(vectorPlayers[8].valoracio);
 	var tir2 = vectorPlayers[8].tirs2 + vectorPlayers[8].tirs2f;
@@ -544,12 +654,17 @@ function statsi8(){
 	$("#Tirs1i8").text( vectorPlayers[8].tirs1+ "/." + tir1 );
 	$("#assis8").text( vectorPlayers[8].assistencia);
 
-
+	if(vectorPlayers[8].faltas == 5 ){
+		document.getElementById('Faltasi8').style.color ='red';
+	}
 
 }
 function statsi9(){
+	$("#Rebotesdoi9").text(vectorPlayers[9].rebotsdef + "+" + vectorPlayers[9].rebotsoff);
 	$("#Faltasi9").text(vectorPlayers[9].faltas);
 	$("#Taponesi9").text(vectorPlayers[9].tapones);
+	$("#Faltasri9").text(vectorPlayers[9].faltasr);
+	$("#Taponesri9").text(vectorPlayers[9].taponesr);
 	$("#dorsali9").text(vectorPlayers[9].num);
 	$("#Puntsi9").text(vectorPlayers[9].punts);
 	$("#Rebotesi9").text(vectorPlayers[9].rebots);
@@ -562,17 +677,22 @@ function statsi9(){
 	$("#Tirs3i9").text( vectorPlayers[9].tirs3+ "/." + tir3 );
 	$("#Tirs1i9").text( vectorPlayers[9].tirs1+ "/." + tir1 );
 	$("#assis9").text( vectorPlayers[9].assistencia);
-	var val = vectorPlayers[9].tapones+vectorPlayers[9].robos + vectorPlayers[9].punts + vectorPlayers[9].rebots+ vectorPlayers[10].assistencia;
-	var val2 = vectorPlayers[9].tirs2f+vectorPlayers[9].tirs3f +vectorPlayers[9].tirs1f + vectorPlayers[9].perdues+vectorPlayers[9].faltas;
+	var val = vectorPlayers[9].tapones+vectorPlayers[9].robos + vectorPlayers[9].punts + vectorPlayers[9].rebots+ vectorPlayers[9].assistencia+vectorPlayers[9].faltasr;
+	var val2 = vectorPlayers[9].tirs2f+vectorPlayers[9].tirs3f +vectorPlayers[9].tirs1f + vectorPlayers[9].perdues+vectorPlayers[9].faltas+vectorPlayers[9].taponesr;
 	vectorPlayers[9].valoracio=val-val2;
 	$("#Valoracioi9").text(vectorPlayers[9].valoracio);
-
+    if(vectorPlayers[9].faltas == 5 ){
+		document.getElementById('Faltasi9').style.color ='red';
+	}
 
 
 }
 function statsi10(){
+	$("#Rebotesdoi10").text(vectorPlayers[10].rebotsdef + "+" + vectorPlayers[10].rebotsoff);
 	$("#Faltasi10").text(vectorPlayers[10].faltas);
 	$("#Taponesi10").text(vectorPlayers[10].tapones);
+	$("#Faltasri10").text(vectorPlayers[10].faltasr);
+	$("#Taponesri10").text(vectorPlayers[10].taponesr);
 	$("#dorsali10").text(vectorPlayers[10].num);
 	$("#Puntsi10").text(vectorPlayers[10].punts);
 	$("#Rebotesi10").text(vectorPlayers[10].rebots);
@@ -585,21 +705,27 @@ function statsi10(){
 	$("#Tirs3i10").text( vectorPlayers[10].tirs3+ "/." + tir3 );
 	$("#Tirs1i10").text( vectorPlayers[10].tirs1+ "/." + tir1 );
 	$("#assis10").text( vectorPlayers[10].assistencia);
-	var val = vectorPlayers[10].tapones+vectorPlayers[10].robos + vectorPlayers[10].punts + vectorPlayers[10].rebots+ vectorPlayers[10].assistencia;
-	var val2 = vectorPlayers[10].tirs2f+vectorPlayers[10].tirs3f +vectorPlayers[10].tirs1f + vectorPlayers[10].perdues+vectorPlayers[10].faltas;
+	var val = vectorPlayers[10].tapones+vectorPlayers[10].robos + vectorPlayers[10].punts + vectorPlayers[10].rebots+ vectorPlayers[10].assistencia+vectorPlayers[10].faltasr;
+	var val2 = vectorPlayers[10].tirs2f+vectorPlayers[10].tirs3f +vectorPlayers[10].tirs1f + vectorPlayers[10].perdues+vectorPlayers[10].faltas+vectorPlayers[10].taponesr;
 	vectorPlayers[10].valoracio=val-val2;
 	$("#Valoracioi10").text(vectorPlayers[10].valoracio);
+	if(vectorPlayers[10].faltas == 5 ){
+		document.getElementById('Faltasi10').style.color ='red';
+	}
 }
 function statsi11(){
+	$("#Rebotesdoi11").text(vectorPlayers[11].rebotsdef + "+" + vectorPlayers[11].rebotsoff);
 	$("#Faltasi11").text(vectorPlayers[11].faltas);
 	$("#Taponesi11").text(vectorPlayers[11].tapones);
+	$("#Faltasri11").text(vectorPlayers[11].faltasr);
+	$("#Taponesri11").text(vectorPlayers[11].taponesr);
 	$("#dorsali11").text(vectorPlayers[11].num);
 	$("#Puntsi11").text(vectorPlayers[11].punts);
 	$("#Rebotesi11").text(vectorPlayers[11].rebots);
 	$("#Robosi11").text(vectorPlayers[11].robos);
 	$("#Perduesi11").text(vectorPlayers[11].perdues);
-	var val = vectorPlayers[11].robos + vectorPlayers[11].punts + vectorPlayers[11].rebots+vectorPlayers[11].assistencia+vectorPlayers[11].tapones;
-	var val2 = vectorPlayers[11].tirs2f+vectorPlayers[11].tirs3f +vectorPlayers[11].tirs1f + vectorPlayers[11].perdues+vectorPlayers[11].faltas;
+	var val = vectorPlayers[11].robos + vectorPlayers[11].punts + vectorPlayers[11].rebots+vectorPlayers[11].assistencia+vectorPlayers[11].tapones+vectorPlayers[11].faltasr;
+	var val2 = vectorPlayers[11].tirs2f+vectorPlayers[11].tirs3f +vectorPlayers[11].tirs1f + vectorPlayers[11].perdues+vectorPlayers[11].faltas+vectorPlayers[11].taponesr;
 	vectorPlayers[11].valoracio=val-val2;
 	$("#Valoracioi11").text(vectorPlayers[11].valoracio);
 	var tir2 = vectorPlayers[11].tirs2 + vectorPlayers[11].tirs2f;
@@ -609,6 +735,9 @@ function statsi11(){
 	$("#Tirs3i11").text( vectorPlayers[11].tirs3+ "/." + tir3 );
 	$("#Tirs1i11").text( vectorPlayers[11].tirs1+ "/." + tir1 );
 	$("#assis11").text( vectorPlayers[11].assistencia);
+	if(vectorPlayers[11].faltas == 5 ){
+		document.getElementById('Faltasi11').style.color ='red';
+	}
 
 
 }
@@ -632,6 +761,10 @@ function guarda() {
 		player.valoracio=0;   
 		player.assistencia= 0;
 		player.tapones=0;
+		player.rebotsdef=0;
+		player.rebotsoff=0;
+		player.faltasr=0;
+		player.taponesr=0;
 		vectorPlayers[el.getAttribute("data-id")] = player;
 		vectornumber[el.getAttribute("data-id")] = el.value;
 	});
