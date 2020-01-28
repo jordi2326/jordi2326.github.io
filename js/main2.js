@@ -494,6 +494,7 @@ $("#menos").click(function(){
        
          
 $("#faltr").click(function(){
+			stopp=true;
 	      if(menos == 1 ){
 	      			  vectorPlayers[jugador].faltasr=vectorPlayers[jugador].faltasr-1;
 	      			  menos = 0 ; 
@@ -512,6 +513,7 @@ $("#faltr").click(function(){
 
 
 	$("#falt").click(function(){
+		stopp=true;
 		if(menos == 1 ){
 					  vectorPlayers[jugador].faltas=vectorPlayers[jugador].faltas-1;
 					  menos = 0 ; 
