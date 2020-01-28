@@ -89,32 +89,68 @@ $("#menos").click(function(){
 
 
 	});
-	$("#i1").dblclick(function(){
+
+	$("#minuts").click(function(){
 		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
 		if(cont<5 ){
-			vectorPlayers[1].stop=!vectorPlayers[1].stop;
-			if(vectorPlayers[1].stop== true ){
-				document.getElementById('i1').style.background ='red';	
-				vectorPlayers[1].titular =false;
+			vectorPlayers[jugador].stop=!vectorPlayers[jugador].stop;
+			if(vectorPlayers[jugador].stop== true ){
+			  if(jugador == 0 )	document.getElementById('i0').style.background ='red';	
+			  if(jugador == 1 )	document.getElementById('i1').style.background ='red';	
+			  if(jugador == 2 )	document.getElementById('i2').style.background ='red';	
+			  if(jugador == 3 )	document.getElementById('i3').style.background ='red';	
+			  if(jugador == 4 )	document.getElementById('i4').style.background ='red';	
+			  if(jugador == 5 )	document.getElementById('i5').style.background ='red';	
+			  if(jugador == 6 )	document.getElementById('i6').style.background ='red';	
+			  if(jugador == 7 )	document.getElementById('i7').style.background ='red';	
+			  if(jugador == 8 )	document.getElementById('i8').style.background ='red';	
+			  if(jugador == 9 )	document.getElementById('i9').style.background ='red';	
+			  if(jugador == 10 )	document.getElementById('i10').style.background ='red';	
+			  if(jugador == 11)	document.getElementById('i11').style.background ='red';	
+
+
+				vectorPlayers[jugador].titular =false;
 				--cont;
 	
 			}
 			else {
-					document.getElementById('i1').style.background ='green';
-					vectorPlayers[1].titular =true;
+				if(jugador == 0 )	document.getElementById('i0').style.background ='green';	
+				if(jugador == 1 )	document.getElementById('i1').style.background ='green';	
+				if(jugador == 2 )	document.getElementById('i2').style.background ='green';	
+				if(jugador == 3 )	document.getElementById('i3').style.background ='green';	
+				if(jugador == 4 )	document.getElementById('i4').style.background ='green';	
+				if(jugador == 5 )	document.getElementById('i5').style.background ='green';	
+				if(jugador == 6 )	document.getElementById('i6').style.background ='green';	
+				if(jugador == 7 )	document.getElementById('i7').style.background ='green';	
+				if(jugador == 8 )	document.getElementById('i8').style.background ='green';	
+				if(jugador == 9 )	document.getElementById('i9').style.background ='green';	
+				if(jugador == 10 )	document.getElementById('i10').style.background ='green';	
+				if(jugador == 11)	document.getElementById('i11').style.background ='green';	
+					  vectorPlayers[jugador].titular =true;
 				    ++cont
 				}
 			   
 			}
 		else {
-			if(vectorPlayers[1].titular ==true) {
-				vectorPlayers[1].stop=!vectorPlayers[1].stop;
-				document.getElementById('i1').style.background ='red';	
-				vectorPlayers[1].titular =false;
+			if(vectorPlayers[jugador].titular ==true) {
+				vectorPlayers[jugador].stop=!vectorPlayers[jugador].stop;
+				if(jugador == 0 )	document.getElementById('i0').style.background ='red';	
+				if(jugador == 1 )	document.getElementById('i1').style.background ='red';	
+				if(jugador == 2 )	document.getElementById('i2').style.background ='red';	
+				if(jugador == 3 )	document.getElementById('i3').style.background ='red';	
+				if(jugador == 4 )	document.getElementById('i4').style.background ='red';	
+				if(jugador == 5 )	document.getElementById('i5').style.background ='red';	
+				if(jugador == 6 )	document.getElementById('i6').style.background ='red';	
+				if(jugador == 7 )	document.getElementById('i7').style.background ='red';	
+				if(jugador == 8 )	document.getElementById('i8').style.background ='red';	
+				if(jugador == 9 )	document.getElementById('i9').style.background ='red';	
+				if(jugador == 10 )	document.getElementById('i10').style.background ='red';	
+				if(jugador == 11)	document.getElementById('i11').style.background ='red';					vectorPlayers[jugador].titular =false;
 				--cont;
 
 			}
 		}
+		jugador=-1;
 
 		
 
