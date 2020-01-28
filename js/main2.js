@@ -3,13 +3,26 @@ var vectornumber = [,,,,,,,,,,,,];
 var vectorPlayers = [,,,,,,,,,,,,];
 var cont = 0 ;
 var jugador = -1;
+var minuts = 0;
+var segons= 0;
 var menos = 0 ;
 var equipolocal=0;
 var a=0;
+var id = -1 ;
+var stopp=true;
 window.onload= function(){
 jugador = -1;
 
    
+$("#start").click(function(){ 
+	stopp=false;
+
+});
+$("#stop").click(function(){ 
+	stopp=true;
+
+});
+
 
    $("#a1").click(function(){ 
    	 a = a +1 ; 
@@ -34,12 +47,75 @@ $("#menos").click(function(){
 
 
 	});
+	$("#i0").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+		
+		if(cont<5 ){
+			vectorPlayers[0].stop=!vectorPlayers[0].stop;
+			if(vectorPlayers[0].stop== true ){
+				document.getElementById('i0').style.background ='red';	
+				vectorPlayers[0].titular =false;
+				--cont;
+	
+			}
+			else {
+					document.getElementById('i0').style.background ='green';
+					vectorPlayers[0].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[0].titular ==true) {
+				vectorPlayers[0].stop=!vectorPlayers[0].stop;
+				document.getElementById('i0').style.background ='red';	
+				vectorPlayers[0].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+			
+   });
+
+	
   $("#i1").click(function(){
   	 
  		jugador=1;
 
 
 	});
+	$("#i1").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+		if(cont<5 ){
+			vectorPlayers[1].stop=!vectorPlayers[1].stop;
+			if(vectorPlayers[1].stop== true ){
+				document.getElementById('i1').style.background ='red';	
+				vectorPlayers[1].titular =false;
+				--cont;
+	
+			}
+			else {
+					document.getElementById('i1').style.background ='green';
+					vectorPlayers[1].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[1].titular ==true) {
+				vectorPlayers[1].stop=!vectorPlayers[1].stop;
+				document.getElementById('i1').style.background ='red';	
+				vectorPlayers[1].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+
+   });
    $("#i2").click(function(){
  		  	jugador=2;
  		  			
@@ -47,54 +123,370 @@ $("#menos").click(function(){
 
 
 	});
+	$("#i2").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+
+		if(cont<5 ){
+			vectorPlayers[2].stop=!vectorPlayers[2].stop;
+			if(vectorPlayers[2].stop== true ){
+				document.getElementById('i2').style.background ='red';	
+				vectorPlayers[2].titular =false;
+				--cont;
+	
+			}
+			else {
+					document.getElementById('i2').style.background ='green';
+					vectorPlayers[2].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[2].titular ==true) {
+				vectorPlayers[2].stop=!vectorPlayers[2].stop;
+				document.getElementById('i2').style.background ='red';	
+				vectorPlayers[2].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+   });
     $("#i3").click(function(){
  		 		jugador=3;
  		 			
  		 		
 
 	});
+	$("#i3").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+
+		if(cont<5 ){
+			vectorPlayers[3].stop=!vectorPlayers[3].stop;
+			if(vectorPlayers[3].stop== true ){
+				document.getElementById('i3').style.background ='red';	
+				vectorPlayers[3].titular =false;
+				--cont;
+	
+			}
+			else {
+					document.getElementById('i3').style.background ='green';
+					vectorPlayers[3].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[3].titular ==true) {
+				vectorPlayers[3].stop=!vectorPlayers[3].stop;
+				document.getElementById('i3').style.background ='red';	
+				vectorPlayers[3].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+
+   });
 	 $("#i4").click(function(){
  		  		 jugador=4;
  		  
 
 	});
+	$("#i4").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+
+		if(cont<5 ){
+			vectorPlayers[4].stop=!vectorPlayers[4].stop;
+			if(vectorPlayers[4].stop== true ){
+				document.getElementById('i4').style.background ='red';	
+				vectorPlayers[4].titular =false;
+				--cont;
+	
+			}
+			else {
+					document.getElementById('i4').style.background ='green';
+					vectorPlayers[4].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[4].titular ==true) {
+				vectorPlayers[4].stop=!vectorPlayers[4].stop;
+				document.getElementById('i4').style.background ='red';	
+				vectorPlayers[4].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+
+   });
 	  $("#i5").click(function(){
  		 		 jugador=5; 		
  		 	
 
 
 	});
+	$("#i5").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+
+		if(cont<5 ){
+			vectorPlayers[5].stop=!vectorPlayers[5].stop;
+			if(vectorPlayers[5].stop== true ){
+				document.getElementById('i5').style.background ='red';	
+				vectorPlayers[5].titular =false;
+				--cont;	
+			}
+			else {
+					document.getElementById('i5').style.background ='green';
+					vectorPlayers[5].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[5].titular ==true) {
+				vectorPlayers[5].stop=!vectorPlayers[5].stop;
+				document.getElementById('i5').style.background ='red';	
+				vectorPlayers[5].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+		
+
+   });
 	   $("#i6").click(function(){
- 		 		jugador=6;
+				  jugador=6;
+				  
  		 			
  		 
 
 	});
+	$("#i6").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+
+		if(cont<5 ){
+			vectorPlayers[6].stop=!vectorPlayers[6].stop;
+			if(vectorPlayers[6].stop== true ){
+				document.getElementById('i6').style.background ='red';	
+				vectorPlayers[6].titular =false;
+				--cont;
+	
+			}
+			else {
+					document.getElementById('i6').style.background ='green';
+					vectorPlayers[6].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[6].titular ==true) {
+				vectorPlayers[6].stop=!vectorPlayers[6].stop;
+				document.getElementById('i6').style.background ='red';	
+				vectorPlayers[6].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+
+   });
 	   $("#i7").click(function(){
  		 	 jugador=7;
  		 
  	
 
 	});
+	$("#i7").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+
+		if(cont<5 ){
+			vectorPlayers[7].stop=!vectorPlayers[7].stop;
+			if(vectorPlayers[7].stop== true ){
+				document.getElementById('i7').style.background ='red';	
+				vectorPlayers[7].titular =false;
+				--cont;
+	
+			}
+			else {
+					document.getElementById('i7').style.background ='green';
+					vectorPlayers[7].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[7].titular =true) {
+				vectorPlayers[7].stop=!vectorPlayers[7].stop;
+				document.getElementById('i7').style.background ='red';	
+				vectorPlayers[7].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+
+		
+
+   });
 	   $("#i8").click(function(){
  		  jugador=8;
  		  	
 
 	});
+	$("#i8").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+
+		if(cont<5 ){
+			vectorPlayers[8].stop=!vectorPlayers[8].stop;
+			if(vectorPlayers[8].stop== true ){
+				document.getElementById('i8').style.background ='red';	
+				vectorPlayers[8].titular =false;
+				--cont;
+			}
+			else {
+					document.getElementById('i8').style.background ='green';
+					vectorPlayers[8].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[8].titular ==true) {
+				vectorPlayers[8].stop=!vectorPlayers[8].stop;
+				document.getElementById('i8').style.background ='red';	
+				vectorPlayers[8].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+
+
+		
+
+   });
 	   $("#i9").click(function(){
  		  jugador= 9;
 
 	});
+	$("#i9").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+
+		if(cont<5 ){
+			vectorPlayers[9].stop=!vectorPlayers[9].stop;
+			if(vectorPlayers[9].stop== true ){
+				document.getElementById('i9').style.background ='red';	
+				vectorPlayers[9].titular =false;
+				--cont;
+			}
+			else {
+					document.getElementById('i9').style.background ='green';
+					vectorPlayers[9].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[9].titular ==true) {
+				vectorPlayers[9].stop=!vectorPlayers[9].stop;
+				document.getElementById('i9').style.background ='red';	
+				vectorPlayers[9].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+
+		
+
+   });
 	   $("#i10").click(function(){
 	   	jugador=10;
 
 	});
+	$("#i10").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+
+		if(cont<5 ){
+			vectorPlayers[10].stop=!vectorPlayers[10].stop;
+			if(vectorPlayers[10].stop== true ){
+				document.getElementById('i10').style.background ='red';	
+				vectorPlayers[10].titular =false;
+	             --cont;
+			}
+			else {
+					document.getElementById('i10').style.background ='green';
+					vectorPlayers[10].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[10].titular ==true) {
+				vectorPlayers[10].stop=!vectorPlayers[10].stop;
+				document.getElementById('i10').style.background ='red';	
+				vectorPlayers[10].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+
+		
+
+   });
 	   $("#i11").click(function(){
 	   	 jugador=11;
  		 		
  		 	
 
 	});
+	$("#i11").dblclick(function(){
+		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
+		if(cont<5 ){
+			vectorPlayers[11].stop=!vectorPlayers[11].stop;
+			if(vectorPlayers[11].stop== true ){
+				document.getElementById('i11').style.background ='red';	
+				vectorPlayers[11].titular =false;
+				--cont;
+	
+			}
+			else {
+					document.getElementById('i11').style.background ='green';
+					vectorPlayers[11].titular =true;
+				    ++cont
+				}
+			   
+			}
+		else {
+			if(vectorPlayers[11].titular ==true) {
+				vectorPlayers[11].stop=!vectorPlayers[11].stop;
+				document.getElementById('i11').style.background ='red';	
+				vectorPlayers[11].titular =false;
+				--cont;
+
+			}
+		}
+
+		
+
+
+   });
 	  
        
          
@@ -361,7 +753,21 @@ $("#faltr").click(function(){
 
 
 
+document.getElementById("min").innerHTML =  00 + " : " +00;
+  document.getElementById("min1").innerHTML = 00 + " : " +00;
+  document.getElementById("min2").innerHTML = 00 + " : " +00;
+  document.getElementById("min3").innerHTML = 00 + " : " +00;
+  document.getElementById("min4").innerHTML = 00 + " : " +00;
+  document.getElementById("min5").innerHTML = 00 + " : " +00;
+  document.getElementById("min6").innerHTML = 00 + " : " +00;
+  document.getElementById("min7").innerHTML = 00+ " : " +00;
+  document.getElementById("min8").innerHTML = 00 + " : " +00;
+  document.getElementById("min9").innerHTML = 00 + " : " +00;
+  document.getElementById("min10").innerHTML = 00+ " : " +00;
+  document.getElementById("min11").innerHTML = 00+ " : " +00;
 
+
+var myVar = setInterval(myTimer, 1000);
 
 	$('#exampleModalCenter').modal({});
 
@@ -369,6 +775,139 @@ $("#faltr").click(function(){
 		guarda();
 		imprimir();
 	});
+}
+
+function myTimer() {
+  if(vectorPlayers[0].stop == false && stopp ==false ){
+	vectorPlayers[0].segons += 1 ; 
+	
+
+	if (vectorPlayers[0].segons > 59) {
+		vectorPlayers[0].minuts+=1;
+		vectorPlayers[0].segons = 0; 
+	}
+  }
+  if(vectorPlayers[1].stop == false && stopp ==false){
+	vectorPlayers[1].segons += 1 ; 
+	
+
+	if (vectorPlayers[1].segons > 59) {
+		vectorPlayers[1].minuts+=1;
+		vectorPlayers[1].segons = 0; 
+	}
+  } 
+  if(vectorPlayers[2].stop == false && stopp ==false ){
+	vectorPlayers[2].segons += 1 ; 
+	
+
+	if (vectorPlayers[2].segons > 59) {
+		vectorPlayers[2].minuts+=1;
+		vectorPlayers[2].segons = 0; 
+	}
+  } 
+  if(vectorPlayers[3].stop == false && stopp ==false ){
+	vectorPlayers[3].segons += 1 ; 
+	
+
+	if (vectorPlayers[3].segons > 59) {
+		vectorPlayers[3].minuts+=1;
+		vectorPlayers[3].segons = 0; 
+	}
+  } 
+  if(vectorPlayers[4].stop == false && stopp ==false ){
+	vectorPlayers[4].segons += 1 ; 
+	
+
+	if (vectorPlayers[4].segons > 59) {
+		vectorPlayers[4].minuts+=1;
+		vectorPlayers[4].segons = 0; 
+	}
+  } 
+
+  if(vectorPlayers[5].stop == false && stopp ==false ){
+	vectorPlayers[5].segons += 1 ; 
+	
+
+	if (vectorPlayers[5].segons > 59) {
+		vectorPlayers[5].minuts+=1;
+		vectorPlayers[5].segons = 0; 
+	}
+  } 
+
+  if(vectorPlayers[6].stop == false && stopp ==false){
+	vectorPlayers[6].segons += 1 ; 
+	
+
+	if (vectorPlayers[6].segons > 59) {
+		vectorPlayers[6].minuts+=1;
+		vectorPlayers[6].segons = 0; 
+	}
+  } 
+  
+  if(vectorPlayers[7].stop == false && stopp ==false ){
+	vectorPlayers[7].segons += 1 ; 
+	
+
+	if (vectorPlayers[7].segons > 59) {
+		vectorPlayers[7].minuts+=1;
+		vectorPlayers[7].segons = 0; 
+	}
+  } 
+  
+  if(vectorPlayers[8].stop == false && stopp ==false ){
+	vectorPlayers[8].segons += 1 ; 
+	
+
+	if (vectorPlayers[8].segons > 59) {
+		vectorPlayers[8].minuts+=1;
+		vectorPlayers[8].segons = 0; 
+	}
+  } 
+
+  if(vectorPlayers[9].stop == false && stopp ==false){
+	vectorPlayers[9].segons += 1 ; 
+	
+
+	if (vectorPlayers[9].segons > 59) {
+		vectorPlayers[9].minuts+=1;
+		vectorPlayers[9].segons = 0; 
+	}
+  } 
+  if(vectorPlayers[10].stop == false && stopp ==false ){
+	vectorPlayers[10].segons += 1 ; 
+	
+
+	if (vectorPlayers[10].segons > 59) {
+		vectorPlayers[10].minuts+=1;
+		vectorPlayers[10].segons = 0; 
+	}
+  } 
+
+  if(vectorPlayers[11].stop == false  && stopp ==false){
+	vectorPlayers[11].segons += 1 ; 
+	
+
+	if (vectorPlayers[11].segons > 59) {
+		vectorPlayers[11].minuts+=1;
+		vectorPlayers[11].segons = 0; 
+	}
+  } 
+
+
+
+  document.getElementById("min").innerHTML = vectorPlayers[0].minuts + " : " +vectorPlayers[0].segons;
+  document.getElementById("min1").innerHTML = vectorPlayers[1].minuts + " : " +vectorPlayers[1].segons;
+  document.getElementById("min2").innerHTML = vectorPlayers[2].minuts + " : " +vectorPlayers[2].segons;
+  document.getElementById("min3").innerHTML = vectorPlayers[3].minuts + " : " +vectorPlayers[3].segons;
+  document.getElementById("min4").innerHTML = vectorPlayers[4].minuts + " : " +vectorPlayers[4].segons;
+  document.getElementById("min5").innerHTML = vectorPlayers[5].minuts + " : " +vectorPlayers[5].segons;
+  document.getElementById("min6").innerHTML = vectorPlayers[6].minuts + " : " +vectorPlayers[6].segons;
+  document.getElementById("min7").innerHTML = vectorPlayers[7].minuts + " : " +vectorPlayers[7].segons;
+  document.getElementById("min8").innerHTML = vectorPlayers[8].minuts + " : " +vectorPlayers[8].segons;
+  document.getElementById("min9").innerHTML = vectorPlayers[9].minuts + " : " +vectorPlayers[9].segons;
+  document.getElementById("min10").innerHTML = vectorPlayers[10].minuts + " : " +vectorPlayers[10].segons;
+  document.getElementById("min11").innerHTML = vectorPlayers[11].minuts + " : " +vectorPlayers[11].segons;
+  
 }
 
  function imprimir(){
@@ -765,6 +1304,10 @@ function guarda() {
 		player.rebotsoff=0;
 		player.faltasr=0;
 		player.taponesr=0;
+		player.segons=0;
+		player.minuts=0;
+		player.titular=false;
+		player.stop=true;
 		vectorPlayers[el.getAttribute("data-id")] = player;
 		vectornumber[el.getAttribute("data-id")] = el.value;
 	});
