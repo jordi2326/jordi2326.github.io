@@ -25,14 +25,17 @@ $("#stop").click(function(){
 
 
    $("#a1").click(function(){ 
-   	 a = a +1 ; 
-   	  	$("#marcador22").text(a);
+		a = a +1 ; 
+		masmenos(-1);
+			 $("#marcador22").text(a);
+			 imprimir();
     
    });
    $("#a1i").click(function(){ 
-   	 a = a - 1 ; 
+		a = a - 1 ; 
+		masmenos(1);
    	  	$("#marcador22").text(a);
-    
+			 imprimir();
    });
   
 
@@ -530,6 +533,7 @@ $("#faltr").click(function(){
 										  menos = 0 ; 
 										  equipolocal-=2;
 										  $("#marcador21").text(equipolocal);
+										  masmenos(-2);
 
                      }
 
@@ -538,6 +542,7 @@ $("#faltr").click(function(){
 				  vectorPlayers[jugador].punts+=2;
 				  equipolocal+=2;
 				  $("#marcador21").text(equipolocal);
+				  masmenos(2);
 			}
 			jugador = -1;
 
@@ -552,12 +557,14 @@ $("#faltr").click(function(){
 				equipolocal-=3;
 				$("#marcador21").text(equipolocal);
 				menos = 0 ;
+				masmenos(-3);
 			}
 			else{
 				vectorPlayers[jugador].tirs3+=1;
 				  vectorPlayers[jugador].punts+=3;
 				  equipolocal+=3;
 				  $("#marcador21").text(equipolocal);
+				  masmenos(3);
 			}
 		    jugador = -1;
 
@@ -572,12 +579,14 @@ $("#faltr").click(function(){
 				  equipolocal-=1;
 				  $("#marcador21").text(equipolocal);
 				menos = 0 ; 
+				masmenos(-1);
 			}
 			else {
 				vectorPlayers[jugador].tirs1+=1;
 				  vectorPlayers[jugador].punts+=1;
 				  equipolocal+=1;
 				  $("#marcador21").text(equipolocal);
+				  masmenos(1);
 
 			}
 		    
@@ -928,6 +937,7 @@ function myTimer() {
 
 function stats(){
 	$("#Faltas").text(vectorPlayers[0].faltas);
+	$("#MasMenos").text(vectorPlayers[0].masmenos);
 	$("#Faltasr").text(vectorPlayers[0].faltasr);
 	$("#dorsal").text(vectorPlayers[0].num);
 	$("#Tapones").text(vectorPlayers[0].tapones);
@@ -959,6 +969,7 @@ function stats(){
 
 }
 function statsi1(){
+	$("#MasMenos1").text(vectorPlayers[1].masmenos);
 	$("#Taponesi1").text(vectorPlayers[1].tapones);
 	$("#Taponesri1").text(vectorPlayers[1].taponesr);
 	$("#Faltasi1").text(vectorPlayers[1].faltas);
@@ -990,6 +1001,7 @@ function statsi1(){
 }
 
 function statsi2(){
+	$("#MasMenos2").text(vectorPlayers[2].masmenos);
 	$("#Rebotesdoi2").text(vectorPlayers[2].rebotsdef + "+" + vectorPlayers[2].rebotsoff);
 	$("#Faltasi2").text(vectorPlayers[2].faltas);
 	$("#Faltasri2").text(vectorPlayers[2].faltasr);
@@ -1022,6 +1034,7 @@ function statsi2(){
 
 }
 function statsi3(){
+	$("#MasMenos3").text(vectorPlayers[3].masmenos);
 	$("#Rebotesdoi3").text(vectorPlayers[3].rebotsdef + "+" + vectorPlayers[3].rebotsoff);
 	$("#Faltasi3").text(vectorPlayers[3].faltas);
 	$("#Faltasri3").text(vectorPlayers[3].faltasr);
@@ -1051,6 +1064,7 @@ function statsi3(){
 
 }
 function statsi4(){
+	$("#MasMenos4").text(vectorPlayers[4].masmenos);
 	$("#Rebotesdoi4").text(vectorPlayers[4].rebotsdef + "+" + vectorPlayers[4].rebotsoff);
 	$("#Faltasi4").text(vectorPlayers[4].faltas);
 	$("#Faltasri4").text(vectorPlayers[4].faltasr);
@@ -1081,6 +1095,7 @@ function statsi4(){
 
 }
 function statsi5(){
+	$("#MasMenos5").text(vectorPlayers[5].masmenos);
 	$("#Rebotesdoi5").text(vectorPlayers[5].rebotsdef + "+" + vectorPlayers[5].rebotsoff);
 	$("#Faltasi5").text(vectorPlayers[5].faltas);
 	$("#Faltasri5").text(vectorPlayers[5].faltasr);
@@ -1110,6 +1125,7 @@ function statsi5(){
 	}
 }
 function statsi6(){
+	$("#MasMenos6").text(vectorPlayers[6].masmenos);
 	$("#Rebotesdoi6").text(vectorPlayers[6].rebotsdef + "+" + vectorPlayers[6].rebotsoff);
 	$("#Faltasi6").text(vectorPlayers[6].faltas);
 	$("#Faltasri6").text(vectorPlayers[6].faltasr);
@@ -1139,6 +1155,7 @@ function statsi6(){
 
 }
 function statsi7(){
+	$("#MasMenos7").text(vectorPlayers[7].masmenos);
 	$("#Rebotesdoi7").text(vectorPlayers[7].rebotsdef + "+" + vectorPlayers[7].rebotsoff);
 	$("#Faltasi7").text(vectorPlayers[7].faltas);
 	$("#Taponesi7").text(vectorPlayers[7].tapones);
@@ -1170,6 +1187,7 @@ function statsi7(){
 
 }
 function statsi8(){
+	$("#MasMenos8").text(vectorPlayers[8].masmenos);
 	$("#Rebotesdoi8").text(vectorPlayers[8].rebotsdef + "+" + vectorPlayers[8].rebotsoff);
 	$("#Faltasi8").text(vectorPlayers[8].faltas);
 	$("#Taponesi8").text(vectorPlayers[8].tapones);
@@ -1199,6 +1217,7 @@ function statsi8(){
 
 }
 function statsi9(){
+	$("#MasMenos9").text(vectorPlayers[9].masmenos);
 	$("#Rebotesdoi9").text(vectorPlayers[9].rebotsdef + "+" + vectorPlayers[9].rebotsoff);
 	$("#Faltasi9").text(vectorPlayers[9].faltas);
 	$("#Taponesi9").text(vectorPlayers[9].tapones);
@@ -1227,6 +1246,7 @@ function statsi9(){
 
 }
 function statsi10(){
+	$("#MasMenos10").text(vectorPlayers[10].masmenos);
 	$("#Rebotesdoi10").text(vectorPlayers[10].rebotsdef + "+" + vectorPlayers[10].rebotsoff);
 	$("#Faltasi10").text(vectorPlayers[10].faltas);
 	$("#Taponesi10").text(vectorPlayers[10].tapones);
@@ -1253,6 +1273,7 @@ function statsi10(){
 	}
 }
 function statsi11(){
+	$("#MasMenos11").text(vectorPlayers[11].masmenos);
 	$("#Rebotesdoi11").text(vectorPlayers[11].rebotsdef + "+" + vectorPlayers[11].rebotsoff);
 	$("#Faltasi11").text(vectorPlayers[11].faltas);
 	$("#Taponesi11").text(vectorPlayers[11].tapones);
@@ -1279,6 +1300,14 @@ function statsi11(){
 	}
 
 
+}
+function masmenos(puntos){
+	var size = vectorPlayers.length;
+	   vectorPlayers.forEach(function (valor) {
+		 if(valor.titular==true){
+			 valor.masmenos+=puntos;
+		 }
+		});
 }
 
 function guarda() {
@@ -1308,6 +1337,7 @@ function guarda() {
 		player.minuts=0;
 		player.titular=false;
 		player.stop=true;
+		player.masmenos=0;
 		vectorPlayers[el.getAttribute("data-id")] = player;
 		vectornumber[el.getAttribute("data-id")] = el.value;
 	});
