@@ -8,6 +8,10 @@ var segons= 0;
 var menos = 0 ;
 var equipolocal=0;
 var a=0;
+var rebdf = 0 ;
+var reboff  = 0 ;
+var faltas = 0 ;
+var tir1 = tir2 = tir3 = tir1f = tir2f = tir3f = 0; 
 var id = -1 ;
 var stopp=true;
 window.onload= function(){
@@ -495,6 +499,15 @@ $("#menos").click(function(){
  		 	
 
 	});
+
+
+
+	$("#rival").click(function(){
+		jugador=-2;
+});
+
+
+
 	$("#i11").dblclick(function(){
 		if(cont == 5 ) window.alert("YA HAY 5 JUGADORES");
 		if(cont<5 ){
@@ -534,14 +547,17 @@ $("#faltr").click(function(){
 	      if(menos == 1 ){
 	      			  vectorPlayers[jugador].faltasr=vectorPlayers[jugador].faltasr-1;
 	      			  menos = 0 ; 
+					  faltas = faltas -1 
+
 
 	      }
 	      else {
 	      			  vectorPlayers[jugador].faltasr=vectorPlayers[jugador].faltasr+1;
+					  faltas = faltas + 1
 
 		  }
 		  jugador = -1;
-
+		  $("#Falt").text( faltas );
 		  imprimir();
 		 
 	});
@@ -565,6 +581,8 @@ $("#faltr").click(function(){
 	   
   });
 		$("#2p").click(function(){
+			console.log(jugador)
+
 				      if(menos == 1 ){
 				      	vectorPlayers[jugador].tirs2-=1;
 		  		vectorPlayers[jugador].punts-=2;
@@ -574,6 +592,17 @@ $("#faltr").click(function(){
 										  masmenos(-2);
 
                      }
+					 if(jugador == -2 ){
+						 console.log(jugador)
+						tir2 += 1 ; 
+						a+=2;
+						$("#marcador22").text(a);
+						$("#prv").text(a);
+						var tir2t = tir2 + tir2f
+						$("#t2rv").text( tir2+ "/" + tir2t);
+										
+
+				   }
 
 			else {
 				vectorPlayers[jugador].tirs2+=1;
@@ -597,6 +626,17 @@ $("#faltr").click(function(){
 				menos = 0 ;
 				masmenos(-3);
 			}
+			if(jugador == -2 ){
+				console.log(jugador)
+			   tir3 += 1 ; 
+			   a+=3;
+			   $("#marcador22").text(a);
+			   $("#prv").text(a);
+			   var tir3t = tir3 + tir3f
+			   $("#t3rv").text( tir3+ "/" + tir3t);
+							   
+
+		  }
 			else{
 				vectorPlayers[jugador].tirs3+=1;
 				  vectorPlayers[jugador].punts+=3;
@@ -619,6 +659,23 @@ $("#faltr").click(function(){
 				menos = 0 ; 
 				masmenos(-1);
 			}
+			
+			if(jugador == -2 ){
+			   console.log(jugador)
+			   tir1 += 1; 
+			   a+=1;
+			   console.log(tir1)
+			   $("#marcador22").text(a);
+			   $("#prv").text(a);
+			   var tir1t = tir1 + tir1f;
+			   $("#t1rv").text( tir1+ "/" + tir1t);
+							   
+
+		  }
+
+		
+
+
 			else {
 				vectorPlayers[jugador].tirs1+=1;
 				  vectorPlayers[jugador].punts+=1;
@@ -670,9 +727,18 @@ $("#faltr").click(function(){
 		$("#reb").click(function(){
 			if (menos == 1 ){
 			   vectorPlayers[jugador].rebots-=1;	
-			   vectorPlayers[jugador].rebotsdef-=1;		 	  
-				menos = 0 ; 
-			}
+			   vectorPlayers[jugador].rebotsdef-=1;	
+			   menos = 0 ; 
+	 	
+				}  
+			
+
+		
+			if(jugador == -2 ){
+			   rebdf += 1 ; 
+			   $("#rdrv").text( rebdf);
+							
+		  }
 			else {
 			  vectorPlayers[jugador].rebots+=1;		 
 			  vectorPlayers[jugador].rebotsdef+=1;		 
@@ -692,6 +758,13 @@ $("#faltr").click(function(){
 		   vectorPlayers[jugador].rebotsoff-=1;		 	  
 			menos = 0 ; 
 		}
+
+		if(jugador == -2 ){
+			reboff += 1 ; 
+			$("#rorv").text( reboff);
+						 
+	   }
+
 		else {
 		  vectorPlayers[jugador].rebots+=1;		 
 		  vectorPlayers[jugador].rebotsoff+=1;		 
@@ -710,11 +783,19 @@ $("#faltr").click(function(){
 					  vectorPlayers[jugador].tirs2f-=1;
 					  menos = 0 ; 	
 			}
+
+			if(jugador == -2 ){
+				console.log(jugador)
+			   tir2f += 1 ; 
+			   var tir2t = tir2 + tir2f
+			   $("#t2rv").text( tir2+ "/" + tir2t);
+							   
+
+		  }
 			else {
 						  vectorPlayers[jugador].tirs2f+=1;
 
-			}
-		  	
+			}	
 			jugador = -1;
 
 		  imprimir();
@@ -726,6 +807,16 @@ $("#faltr").click(function(){
 		  menos = 0 ; 
 
 			} 
+
+
+			if(jugador == -2 ){
+				console.log(jugador)
+			   tir3f += 1 ; 
+			   var tir3t = tir3 + tir3f
+			   $("#t3rv").text( tir3+ "/" + tir3t);
+							   
+
+		  }
 			else {
 						  vectorPlayers[jugador].tirs3f+=1;
 
@@ -742,6 +833,13 @@ $("#faltr").click(function(){
 			  menos = 0 ; 
 
 			}
+			if(jugador == -2 ){
+				console.log(jugador)
+			   tir1f += 1 ; 
+			   var tir1t = tir1 + tir1f
+			   $("#t1rv").text( tir1+ "/" + tir1t);
+							   
+		  }
 			else {
 			   vectorPlayers[jugador].tirs1f+=1;	
 			}
@@ -958,7 +1056,7 @@ function myTimer() {
 }
 
  function imprimir(){
- 	  stats();
+ 	 	 stats();
           statsi1();
          statsi2();
          statsi3();
