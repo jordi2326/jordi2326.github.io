@@ -585,15 +585,15 @@ $("#faltr").click(function(){
 
 				      if(menos == 1 ){
 				      	vectorPlayers[jugador].tirs2-=1;
-		  		vectorPlayers[jugador].punts-=2;
-										  menos = 0 ; 
-										  equipolocal-=2;
-										  $("#marcador21").text(equipolocal);
-										  masmenos(-2);
+		  				vectorPlayers[jugador].punts-=2;
+						menos = 0 ; 
+						equipolocal-=2;
+						$("#marcador21").text(equipolocal);
+						masmenos(-2);
 
                      }
-					 if(jugador == -2 ){
-						 console.log(jugador)
+						else  if(jugador == -2 ){
+						console.log(jugador)
 						tir2 += 1 ; 
 						a+=2;
 						$("#marcador22").text(a);
@@ -601,6 +601,16 @@ $("#faltr").click(function(){
 						var tir2t = tir2 + tir2f
 						$("#t2rv").text( tir2+ "/" + tir2t);
 										
+
+				   }
+				   else if (menos == 1 && jugador == -2 ){
+					console.log(jugador)
+					tir2 -= 1 ; 
+					a-=2;
+					$("#marcador22").text(a);
+					$("#prv").text(a);
+					var tir2t = tir2 + tir2f
+					$("#t2rv").text( tir2+ "/" + tir2t);
 
 				   }
 
@@ -734,7 +744,7 @@ $("#faltr").click(function(){
 			
 
 		
-			if(jugador == -2 ){
+			else if(jugador == -2 ){
 			   rebdf += 1 ; 
 			   $("#rdrv").text( rebdf);
 							
@@ -759,7 +769,7 @@ $("#faltr").click(function(){
 			menos = 0 ; 
 		}
 
-		if(jugador == -2 ){
+		else if(jugador == -2 ){
 			reboff += 1 ; 
 			$("#rorv").text( reboff);
 						 
@@ -784,7 +794,7 @@ $("#faltr").click(function(){
 					  menos = 0 ; 	
 			}
 
-			if(jugador == -2 ){
+			else if(jugador == -2 ){
 				console.log(jugador)
 			   tir2f += 1 ; 
 			   var tir2t = tir2 + tir2f
@@ -809,7 +819,7 @@ $("#faltr").click(function(){
 			} 
 
 
-			if(jugador == -2 ){
+			else if(jugador == -2 ){
 				console.log(jugador)
 			   tir3f += 1 ; 
 			   var tir3t = tir3 + tir3f
@@ -833,8 +843,8 @@ $("#faltr").click(function(){
 			  menos = 0 ; 
 
 			}
-			if(jugador == -2 ){
-				console.log(jugador)
+			else if(jugador == -2 ){
+			   console.log(jugador)
 			   tir1f += 1 ; 
 			   var tir1t = tir1 + tir1f
 			   $("#t1rv").text( tir1+ "/" + tir1t);
