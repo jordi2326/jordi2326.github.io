@@ -636,7 +636,7 @@ $("#faltr").click(function(){
 				menos = 0 ;
 				masmenos(-3);
 			}
-			if(jugador == -2 ){
+			else if(jugador == -2 ){
 				console.log(jugador)
 			   tir3 += 1 ; 
 			   a+=3;
@@ -670,7 +670,7 @@ $("#faltr").click(function(){
 				masmenos(-1);
 			}
 			
-			if(jugador == -2 ){
+			else if(jugador == -2 ){
 			   console.log(jugador)
 			   tir1 += 1; 
 			   a+=1;
